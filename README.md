@@ -9,19 +9,22 @@ As a side effect, all (exif etc) meta data will be stripped away.
 
 You can install this package using npm:
 
-```
-npm install @mr-smith/downscale-image
+```bash
+npm install @hochleistungslabor/img-downscale
 ```
 
 ## Usage
 
 To use this library in your project, you need to import it and call the downscaleImage function with the image data URL and scaling settings as input. For example:
 
-```
-import { downscaleImage } from '@mr-smith/downscale-image';
+```js
+import { downscaleImage } from "@hochleistungslabor/downscale-image";
 
-const imageDataUrl = 'https://example.com/image.jpg';
-const scaleOptions = { maxDimensions: { width: 1024, height: 768 }, cropToExactTarget: true };
+const imageDataUrl = "data:image/png;base64...";
+const scaleOptions = {
+  maxDimensions: { width: 640, height: 400 },
+  cropToExactTarget: true,
+};
 
 downscaleImage(imageDataUrl, scaleOptions).then((data) => {
   console.log(data); // the downscaled image as a data URL
@@ -54,10 +57,10 @@ The following functions are exported by this library:
 
 ### Downscaling an image with default options
 
-```
-import { downscaleImage } from '@mr-smith/downscale-image';
+```js
+import { downscaleImage } from "@hochleistungslabor/img-downscale";
 
-const imageDataUrl = 'https://example.com/image.jpg';
+const imageDataUrl = "data:image/png;base64...";
 
 downscaleImage(imageDataUrl, {}).then((data) => {
   console.log(data); // the downscaled image as a data URL
@@ -66,11 +69,14 @@ downscaleImage(imageDataUrl, {}).then((data) => {
 
 ### Downscaling an image with custom options
 
-```
-import { downscaleImage } from '@mr-smith/downscale-image';
+```js
+import { downscaleImage } from "@hochleistungslabor/img-downscale";
 
-const imageDataUrl = 'https://example.com/image.jpg';
-const scaleOptions = { maxDimensions: { width: 640, height: 400 }, cropToExactTarget: true };
+const imageDataUrl = "data:image/png;base64...";
+const scaleOptions = {
+  maxDimensions: { width: 640, height: 400 },
+  cropToExactTarget: true,
+};
 
 downscaleImage(imageDataUrl, scaleOptions).then((data) => {
   console.log(data); // the downscaled image as a data URL
