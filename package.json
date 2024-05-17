@@ -1,6 +1,6 @@
 {
   "name": "@hochleistungslabor/img-downscale",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Downscale images",
   "scripts": {
     "lint": "eslint src tests",
@@ -13,6 +13,7 @@
     "url": "https://github.com/hochleistungslabor/img-downscale"
   },
   "keywords": [
+    "webpack",
     "image",
     "scale",
     "down"
